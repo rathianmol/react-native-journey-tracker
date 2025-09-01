@@ -1,29 +1,60 @@
 import { Link } from "expo-router";
-import { Pressable, StyleSheet, Text, View } from "react-native";
+import { Pressable, Text, View } from "react-native";
 
 export default function Index() {
   return (
-    <View style={styles.container}>
-      {/* Logo */}
-      <Text style={styles.logo}>
+    <View style={{
+      flex: 1,
+      justifyContent: 'center',
+      alignItems: 'center',
+      backgroundColor: 'white',
+      paddingHorizontal: 32,
+    }}>
+      <Text style={{
+        fontSize: 36,
+        fontWeight: 'bold',
+        color: '#2563eb',
+        marginBottom: 64,
+      }}>
         JourneyTracker
       </Text>
       
-      {/* Navigation Links */}
-      <View style={styles.buttonContainer}>
+      <View style={{
+        width: '100%',
+        maxWidth: 300,
+      }}>
         <Link href="/start-journey" asChild>
-          {/* <Pressable style={[styles.button, styles.blueButton]}> */}
-          <Pressable>
-            <Text style={styles.buttonText}>
+          <Pressable style={{
+            paddingVertical: 16,
+            paddingHorizontal: 32,
+            borderRadius: 8,
+            marginBottom: 16,
+            backgroundColor: '#3b82f6',
+          }}>
+            <Text style={{
+              color: 'white',
+              fontSize: 20,
+              fontWeight: '600',
+              textAlign: 'center',
+            }}>
               Start New Journey
             </Text>
           </Pressable>
         </Link>
         
         <Link href="/view-journeys" asChild>
-          {/* <Pressable style={[styles.button, styles.greenButton]}> */}
-          <Pressable>
-            <Text style={styles.buttonText}>
+          <Pressable style={{
+            paddingVertical: 16,
+            paddingHorizontal: 32,
+            borderRadius: 8,
+            backgroundColor: '#10b981',
+          }}>
+            <Text style={{
+              color: 'white',
+              fontSize: 20,
+              fontWeight: '600',
+              textAlign: 'center',
+            }}>
               View Journeys
             </Text>
           </Pressable>
@@ -32,41 +63,3 @@ export default function Index() {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'white',
-    paddingHorizontal: 32,
-  },
-  logo: {
-    fontSize: 36,
-    fontWeight: 'bold',
-    color: '#2563eb',
-    marginBottom: 64,
-  },
-  buttonContainer: {
-    width: '100%',
-    maxWidth: 300,
-  },
-  button: {
-    paddingVertical: 16,
-    paddingHorizontal: 32,
-    borderRadius: 8,
-    marginBottom: 16,
-  },
-  blueButton: {
-    backgroundColor: '#3b82f6',
-  },
-  greenButton: {
-    backgroundColor: '#10b981',
-  },
-  buttonText: {
-    color: 'black',
-    fontSize: 20,
-    fontWeight: '600',
-    textAlign: 'center',
-  },
-});
